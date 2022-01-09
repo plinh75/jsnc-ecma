@@ -5,3 +5,4 @@ document.querySelector("#app").innerHTML = `
   <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
 `;
 const a = 10;
+console.log(a);
