@@ -4,18 +4,17 @@ import Header from "../components/header";
 const AboutPage = {
     render() {
         return `
-            <div class="max-w-5xl mx-auto">
+            <div>
                 <header>
                     ${Header.render()}
                 </header>
                 <main>
                     <h1>About Page</h1>
                 </main>
-                <footer>
+                <footer class="bg-blue-900 text-white">
                     ${Footer.render()}
                 </footer>
             </div>
-            
         `;
     },
 };

@@ -4,7 +4,7 @@ import Navigo from "navigo";
 import AboutPage from "./pages/about";
 import DetailPage from "./pages/detail";
 import HomePage from "./pages/home";
-import ProductPage from "./pages/product";
+import ProductPage from "./pages/productpage";
 import AdminProductPage from "./pages/admin/product";
 import Signup from "./pages/signup";
 import AdminProductEdit from "./pages/admin/productEdit";
