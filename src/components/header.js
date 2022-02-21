@@ -31,7 +31,7 @@ const Header = {
                 |
               </span>
               <span>
-                <a class="text-white" id="logout">
+                <a class="text-white" href="" id="logout">
                       Logout</a
                     >
               </span>
@@ -112,7 +112,7 @@ const Header = {
                 >
               </li>
             </ul>
-            <a href="#" class="text-black text-3xl relative pt-[6px] pr-[6px]">
+            <a href="" class="text-black text-3xl relative pt-[6px] pr-[6px]">
               <i class="fa-solid fa-cart-shopping"></i>
               <span
                 class="absolute top-0 right-0 text-white text-base bg-pink-400 rounded-[50%] w-5 h-5 text-center hover:text-[#b4073a]"

@@ -51,50 +51,13 @@ const DetailPage = {
                 class="text-base lg:text-2xl text-pink-500 text-center font-bold"
                 >${data.desc}</span
               >
-              <a href=""
-                ><span class="opacity-80">
-                  Có 0 phản hồi cho sản phẩm này
-                </span></a
-              >
             </div>
           </div>
           <div class="border-y border-solid border-gray-300 py-4">
-            <button class="bg-[#e10747] text-white p-4 rounded-sm">
-              <i class="fa-solid fa-cart-shopping"></i>
-              <span class="uppercase">Thêm vào giỏ hàng</span>
-            </button>
+          ${data.desc2}
           </div>
         </div>
       </div>
-      <div
-        class="flex items-center gap-2 border-b border-gray-300 border-solid mb-2"
-      >
-        <div>
-          <button
-            class="bg-gray-100 py-2 px-3 rounded-tl-xl rounded-tr-xl uppercase"
-          >
-            Thông tin sản phẩm
-          </button>
-        </div>
-        <div>
-          <button
-            class="bg-gray-300 py-2 px-3 rounded-tl-xl rounded-tr-xl uppercase"
-          >
-            Bình luận(0)
-          </button>
-        </div>
-      </div>
-      <div class="flex justify-end gap-2 pb-32">
-        <i class="fa-solid fa-star start"></i>
-        <i class="fa-solid fa-star start"></i>
-        <i class="fa-solid fa-star start"></i>
-        <i class="fa-solid fa-star start"></i>
-        <i class="fa-regular fa-star"></i>
-        <span>4 |</span>
-        <i class="fa-solid fa-star"></i>
-        <span>444</span>
-      </div>
-      
         </div>
       </div>
     </div>

@@ -1,33 +1,44 @@
-import toastr from "toastr";
-import { getLocalStorage, setLocalStorage } from "./index";
-import "toastr/build/toastr.min.css";
-
 let cart = [];
 if (localStorage.getItem("cart")) {
-    cart = getLocalStorage("cart");
+    cart = JSON.parse(localStorage.getItem("cart"));
 }
 
-// eslint-disable-next-line import/prefer-default-export
-export const addToCart = (newItem, next) => {
-    const existItem = cart.find((item) => item.id === newItem.id);
-    if (!existItem) {
-        cart.push(newItem);
+export const addTocart = (newProduct, next) => {
+    const existProduct = cart.find((item) => item.id === newProduct.id);
+
+    if (!existProduct) {
+        cart.push(newProduct);
     } else {
-        // eslint-disable-next-line no-plusplus
-        existItem.quantity++;
+        existProduct.quantity += newProduct.quantity;
     }
-    setLocalStorage("cart", cart);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
     next();
 };
-export const increaseQuantityFromCart = () => {
-
+export const increaseQuantity = (id, next) => {
+    // eslint-disable-next-line no-plusplus
+    cart.find((item) => item.id === id).quantity++;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    next();
 };
-export const decreaseQuantityFromCart = () => {
-
+export const decreaseQuantity = (id, next) => {
+    const currentProduct = cart.find((item) => item.id === id);
+    // eslint-disable-next-line no-plusplus
+    currentProduct.quantity--;
+    if (currentProduct.quantity < 1) {
+        const confirm = window.confirm("Bạn có muốn xóa không?");
+        if (confirm) {
+            cart = cart.filter((item) => item.id !== id);
+        }
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    next();
 };
-export const removeItemFromCart = () => {
-
-};
-export const getTotalPrice = () => {
-
+export const removeItemInCart = (id, next) => {
+    const confirm = window.confirm("Bạn có muốn xóa không?");
+    if (confirm) {
+        cart = cart.filter((item) => item.id !== id);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    next();
 };

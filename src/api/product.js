@@ -8,15 +8,15 @@ export const get = (id) => {
     const url = `/products/${id}`;
     return instance.get(url);
 };
-export const add = (post) => {
+export const add = (products) => {
     const url = `/products`;
-    return instance.post(url, post);
+    return instance.products(url, products);
 };
 export const remove = (id) => {
     const url = `/products/${id}`;
     return instance.delete(url);
 };
-export const update = (post) => {
-    const url = `/products/${post.id}`;
-    return instance.put(url, post);
+export const update = (products) => {
+    const url = `/products/${products.id}`;
+    return instance.put(url, products);
 };
