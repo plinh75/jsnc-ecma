@@ -1,10 +1,10 @@
 import axios from "axios";
-import { add } from "../../../api/posts";
-import adminNewsList from "./admin_new";
+import { add } from "../../../api/product";
+import adminProductsList from "./admin_product";
 import NavAdmin from "../../../components/nav_admin";
 import { reRender } from "../../../utils";
 
-const AdminNewsAdd = {
+const AdminProductsAdd = {
     async render() {
         return /* html */`
         <div class="min-h-full">
@@ -21,7 +21,7 @@ const AdminNewsAdd = {
                         </h2>
                     </div>
                     <div class="mt-5 flex lg:mt-0 lg:ml-4">
-                        <a href="/admin/news/add" class="sm:ml-3">
+                        <a href="/admin/products/add" class="sm:ml-3">
                             <button
                                 type="button"
                                 class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -37,11 +37,11 @@ const AdminNewsAdd = {
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                 <!-- Replace with your content -->
                 <div class="px-4 py-6 sm:px-0">
-                    <form id="form_add_post">
-                        <input type="text" class="border-dashed border-2 border-gray-400" placeholder="Title" id="title_post"/><br>
-                        <input type="file" class="border-dashed border-2 border-gray-400" placeholder="Image" id="img_post"/><br>
+                    <form id="form_add_product">
+                        <input type="text" class="border-dashed border-2 border-gray-400" placeholder="Name" id="name_product"/><br>
+                        <input type="file" class="border-dashed border-2 border-gray-400" placeholder="Image" id="img_product"/><br>
                         <img src="https://thumbs.dreamstime.com/b/no-thumbnail-image-placeholder-forums-blogs-websites-148010362.jpg" id="img-preview"/>
-                        <textarea name="" id="desc_post" cols="30" rows="10" class="border-dashed border-2 border-gray-400" placeholder="Description"></textarea><br>
+                        <textarea name="" id="desc_product" cols="30" rows="10" class="border-dashed border-2 border-gray-400" placeholder="Description"></textarea><br>
                         <input type="submit" class="bg-stone-800 text-white border-double border-2 w-28 hover:text-yellow-300" value="Add">
                     </form>
                 </div>
@@ -53,8 +53,8 @@ const AdminNewsAdd = {
         `;
     },
     afterRender() {
-        const formAdd = document.querySelector("#form_add_post");
-        const imgPost = document.querySelector("#img_post");
+        const formAdd = document.querySelector("#form_add_product");
+        const imgPost = document.querySelector("#img_product");
         const imgPreview = document.querySelector("#img_preview");
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/ddnobdgia/image/upload";
         const CLOUDINARY_PRESET = "web_jsnc";
@@ -67,7 +67,7 @@ const AdminNewsAdd = {
         formAdd.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            const file = document.querySelector("#img_post").files[0];
+            const file = document.querySelector("#img_product").files[0];
             if (file) {
                 const formData = new FormData();
                 formData.append("file", file);
@@ -82,17 +82,17 @@ const AdminNewsAdd = {
             }
 
             add({
-                title: document.querySelector("#title_post").value,
+                title: document.querySelector("#name_product").value,
                 img: imgLink || "",
-                desc: document.querySelector("#desc_post").value,
+                desc: document.querySelector("#desc_product").value,
             })
                 .then(
                     () => {
-                        window.location.href = "/#/admin/news";
-                        reRender(adminNewsList, "#app");
+                        window.location.href = "/#/admin/product";
+                        reRender(adminProductsList, "#app");
                     },
                 );
         });
     },
 };
-export default AdminNewsAdd;
+export default AdminProductsAdd;

@@ -1,7 +1,8 @@
-import Footer from "../components/footer";
-import Header from "../components/header";
+import Footer from "../../components/footer";
+import Header from "../../components/header";
+import ContactPage from "./contact_page";
 
-const AboutPage = {
+const Contact = {
     render() {
         return `
             <div>
@@ -9,7 +10,7 @@ const AboutPage = {
                     ${Header.render()}
                 </header>
                 <main>
-                    <h1>About Page</h1>
+                ${ContactPage.render()}
                 </main>
                 <footer class="bg-blue-900 text-white">
                     ${Footer.render()}
@@ -19,4 +20,4 @@ const AboutPage = {
     },
 };
 
-export default AboutPage;
+export default Contact;

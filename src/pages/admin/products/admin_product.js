@@ -1,8 +1,12 @@
-import news from "../../data";
-import NavAdmin from "../nav_admin";
+import toastr from "toastr";
+import NavAdmin from "../../../components/nav_admin";
+import { getAll, remove } from "../../../api/product";
+import { reRender } from "../../../utils";
+import "toastr/build/toastr.min.css";
 
-const adminProductList = {
-    render() {
+const adminProductsList = {
+    async render() {
+        const { data } = await getAll();
         return /* html */`
         ${NavAdmin.render()}
         <header class="bg-white shadow">
@@ -12,8 +16,18 @@ const adminProductList = {
                     <h2
                     class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate"
                     >
-                    Quản lý bài viết
+                    Quản lý sản phẩm
                     </h2>
+                </div>
+                <div class="mt-5 flex lg:mt-0 lg:ml-4">
+                    <a href="/admin/products/add" class="sm:ml-3">
+                        <button
+                            type="button"
+                            class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                            Thêm mới
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -41,19 +55,19 @@ const adminProductList = {
                       Role
                     </th>
                     <th scope="col" class="relative px-6 py-3">
-                      <span class="sr-only">Edit</span>
+                      
                     </th>
                   </tr>
                 </thead>
                 
-                ${news.map((post) => `
+                ${data.map((post) => `
                 <tbody class="bg-white divide-y divide-gray-200">
                 <tr>
                     <td class="px-6 py-4 whitespace-nowrap">
                     ${post.id}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
-                    ${post.title}
+                    ${post.name}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap">
                     <img src="${post.img}">
@@ -62,7 +76,8 @@ const adminProductList = {
                     ${post.desc}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <a href="/admin/product/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                      <a href="/admin/products/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                      <button data-id="${post.id}" class="btn btn-remove text-indigo-600 hover:text-indigo-900">Delete</button>
                     </td>
                   </tr>
       
@@ -73,8 +88,28 @@ const adminProductList = {
             </div>
           </div>
         </div>
-      </div>
         `;
     },
+    afterRender() {
+        // lấy toàn bộ button thông qua class .bnt
+        const btns = document.querySelectorAll(".btn");
+        // tạo vòng lặp để lấy từng button element
+        btns.forEach((btn) => {
+            // Lấy giá trị ID thông qua thuộc tính data-id của button
+            const { id } = btn.dataset;
+            btn.addEventListener("click", () => {
+                // eslint-disable-next-line no-alert
+                const confirm = window.confirm("Bạn có chắc chắn muốn xóa không?");
+                if (confirm) {
+                    remove(id).then(() => {
+                        toastr.success("Bạn đã xóa thành công");
+                    }).then(() => {
+                        reRender(adminProductsList, "#app");
+                    });
+                }
+            });
+        });
+    },
 };
-export default adminProductList;
+
+export default adminProductsList;

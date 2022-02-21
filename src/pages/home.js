@@ -3,9 +3,10 @@ import News from "../components/news";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Activs from "../components/activ";
+import Slogan from "../components/slogan";
 
 const HomePage = {
-    render() {
+    async render() {
         return /* html */`
             <div>
                 <header>
@@ -15,11 +16,14 @@ const HomePage = {
             <div>
                 ${Banner.render()}
             </div>
-            <div>
-                ${News.render()}
-            </div>
             <div class="py-5">
-                ${Activs.render()}
+                ${await News.render()}
+            </div>
+            <div class="pt-2">
+                ${Slogan.render()}
+        </div>
+            <div class="py-5">
+                ${await Activs.render()}
             </div>
             <div>
                 <footer class="bg-blue-900 text-white">
@@ -27,6 +31,9 @@ const HomePage = {
                 </footer>
             </div>
         `;
+    },
+    afterRender() {
+        Header.afterRender();
     },
 };
 export default HomePage;

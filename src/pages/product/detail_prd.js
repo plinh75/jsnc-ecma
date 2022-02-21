@@ -1,6 +1,9 @@
-import { get } from "../api/posts";
+import toastr from "toastr";
+import { get } from "../../api/product";
+import { addToCart } from "../../utils/cart";
+import "toastr/build/toastr.min.css";
 
-const DetailPage = {
+const DetailProduct = {
     async render(id) {
         const { data } = await get(id);
         return /* html */`
@@ -8,7 +11,7 @@ const DetailPage = {
     <div
       class="bg-center text-2xl md:text-[38px] uppercase text-gray-100 text-center mb-6 py-10"
     >
-    ${data.title}
+    ${data.name}
     </div>
 
     <div class="container mb-8">
@@ -44,22 +47,20 @@ const DetailPage = {
         <div class="w-full lg:w-[60%]">
           <div class="mb-10">
             <h3 class="text-xl lg:text-3xl mb-2">
-            ${data.title}
+            ${data.name}
             </h3>
             <div class="flex items-center gap-8">
               <span
-                class="text-base lg:text-2xl text-pink-500 text-center font-bold"
+                class="text-base text-black text-center"
                 >${data.desc}</span
-              >
-              <a href=""
-                ><span class="opacity-80">
-                  Có 0 phản hồi cho sản phẩm này
-                </span></a
               >
             </div>
           </div>
+          <div>
+                    <input type="number" id="inputValue" class="border border-gray-500" />
+                </div>
           <div class="border-y border-solid border-gray-300 py-4">
-            <button class="bg-[#e10747] text-white p-4 rounded-sm">
+            <button class="bg-[#e10747] text-white p-4 rounded-sm" id="btnAddToCart">
               <i class="fa-solid fa-cart-shopping"></i>
               <span class="uppercase">Thêm vào giỏ hàng</span>
             </button>
@@ -101,5 +102,15 @@ const DetailPage = {
   </main>
         `;
     },
+    afterRender(id) {
+        const btnAddToCart = document.querySelector("#btnAddToCart");
+        const inputValue = document.querySelector("#inputValue");
+        btnAddToCart.addEventListener("click", async () => {
+            const { data } = await get(id);
+            addToCart({ ...data, quantity: inputValue.value ? +inputValue.value : 1 }, () => {
+                toastr.success("Thêm thành công");
+            });
+        });
+    },
 };
-export default DetailPage;
+export default DetailProduct;
