@@ -1,6 +1,4 @@
-import toastr from "toastr";
 import { getLocalStorage, setLocalStorage } from "./index";
-import "toastr/build/toastr.min.css";
 
 let cart = [];
 if (localStorage.getItem("cart")) {
