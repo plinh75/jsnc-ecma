@@ -27,12 +27,12 @@ const NavAdmin = {
                     >News</a
                   >
                   <a
-                    href="/admin/news/add"
+                    href="/admin/product"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    >Add News</a
+                    >Products</a
                   >
                   <a
-                    href="#"
+                    href="/"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >Home Page</a
                   >

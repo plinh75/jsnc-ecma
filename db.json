@@ -1,0 +1,135 @@
+{
+  "posts": [
+    {
+      "createdAt": "2022-01-19T02:20:44.558Z",
+      "desc": "239.000đ",
+      "title": "Son sáp Miin99",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/1e308-mi.jpg",
+      "id": "1"
+    },
+    {
+      "desc": "199.000đ",
+      "title": "Son kem Miin99",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/14817-miin.jpg",
+      "id": "2"
+    },
+    {
+      "createdAt": "2022-01-19T06:23:36.749Z",
+      "desc": "450.000đ",
+      "title": "Son MAC Matte",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/13cc9-41msuguqjdl._sy355_.jpg",
+      "id": "3"
+    },
+    {
+      "title": "Son MAC Retro Matte",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/36d3b-son-mac-retro-matte-.jpg",
+      "desc": "450.000đ",
+      "id": "31u9ELI"
+    },
+    {
+      "createdAt": "2022-01-19T06:23:36.749Z",
+      "desc": "360.000đ",
+      "title": "Son 3CE Liquid Lip Color",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/078e9-maxresdefault.jpg",
+      "id": "4"
+    },
+    {
+      "createdAt": "2022-01-19T06:23:36.749Z",
+      "desc": "180.000đ",
+      "title": "Son bút chì 3CE Drawing Lip Pen",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/347c4-chi.jpg",
+      "id": "5"
+    },
+    {
+      "createdAt": "2022-01-19T06:23:36.749Z",
+      "desc": "280.000đ",
+      "title": "Son 3CE Tattoo Lip Tint",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/2198e-dd.jpg",
+      "id": "6"
+    },
+    {
+      "title": "abccc",
+      "img": "http://res.cloudinary.com/ddnobdgia/image/upload/v1645240830/we16309/goxofnroe9wjbt9neqyb.jpg",
+      "desc": "jjjjjjj",
+      "id": "rkPj952"
+    }
+  ],
+  "users": [
+    {
+      "email": "nguyetnem2001@gmail.com",
+      "password": "$2a$10$i1wuwaEOjRS.3v/K9f4cje0wSsEauwf1bd9Tcll1qfWHVki0auvH.",
+      "username": "mm",
+      "id": 1
+    },
+    {
+      "email": "nguyetnemm2001@gmail.com",
+      "password": "$2a$10$TLX8RQ/c7kTgUJagDG1.jOxVX/SrfsEAJll0KxF7U5gZDp6E7Z27C",
+      "username": "linh",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "Son môi Dior Rouge",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/c51ed-771.jpg",
+      "desc": "Thuộc bộ sưu tập son cao cấp từ thương hiệu  mỹ phẩm đắt giá Dior của Pháp",
+      "price": "790.000đ",
+      "id": "1"
+    },
+    {
+      "name": "Son môi Dior Addict",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/2ea4f-son-moi-dior-addict-lipstick-backstage-pink-35g.png",
+      "desc": "Son tẩy tế bào chết môi",
+      "price": "599.000đ",
+      "id": "2"
+    },
+    {
+      "name": "Mac Retro Matte Liquid",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/2ee1d-son-mac-retro-matte-liquid-lipcolour-feels-so-grand-swatch-review.jpg",
+      "desc": "Tông đỏ chuẩn mực, làm răng thêm trắng và tôn da sáng mịn.",
+      "price": "450.000đ",
+      "id": "3"
+    },
+    {
+      "name": "Son 3CE Mood Recipe Matte Lip Color",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/33817-son-220-420x420.png",
+      "desc": "Cầm chắc tay, màu vỏ trùng với màu son vô cùng tiện lợi.",
+      "price": "370.000đ",
+      "id": "4"
+    },
+    {
+      "name": "Son 3CE Red Recipe",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/21b84-ref.jpg",
+      "desc": "Thiết kế đơn giản, chắc tay với phần vỏ đỏ nổi bật.",
+      "price": "370.000đ",
+      "id": "5"
+    },
+    {
+      "name": "Son Christian Louboutin Loubilaque Lip Lacquer",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/ea32a-son-christian-loubilaque-lip-lacquer-altressa.jpg",
+      "desc": "Đây là dòng son kem ra đời sau của hãng.",
+      "price": "2.750.000đ",
+      "id": "6"
+    },
+    {
+      "name": "Son thỏi 3CE Slim Velvet Lip Color",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/9ff8d-screen-shot-2019-03-23-at-10.04.35-pm.png",
+      "desc": "Bảng màu đa dạng, vô cùng bắt mắt.",
+      "price": "239.000đ",
+      "id": "7"
+    },
+    {
+      "name": "Son L’oreal Colour Riche Julianne’s Nude",
+      "img": "https://shopsonmoi.vn/assets/uploads/files/c9a04-loreal-colour-riche-juliannes-nude.jpg",
+      "desc": "Xuất xứ: Pháp. Nhà sản xuất: L’oreal",
+      "price": "260.000đ",
+      "id": "8"
+    },
+    {
+      "title": "fff",
+      "img": "http://res.cloudinary.com/ddnobdgia/image/upload/v1645374801/we16309/hh0fsmfkvqd8f7tag63b.jpg",
+      "desc": "aaaaaa",
+      "id": "6iNQci8"
+    }
+  ]
+}
