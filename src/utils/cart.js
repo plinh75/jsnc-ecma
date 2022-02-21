@@ -1,44 +1,31 @@
+import { getLocalStorage, setLocalStorage } from "./index";
+
 let cart = [];
 if (localStorage.getItem("cart")) {
-    cart = JSON.parse(localStorage.getItem("cart"));
+    cart = getLocalStorage("cart");
 }
 
-export const addTocart = (newProduct, next) => {
-    const existProduct = cart.find((item) => item.id === newProduct.id);
-
-    if (!existProduct) {
-        cart.push(newProduct);
+// eslint-disable-next-line import/prefer-default-export
+export const addToCart = (newItem, next) => {
+    const existItem = cart.find((item) => item.id === newItem.id);
+    if (!existItem) {
+        cart.push(newItem);
     } else {
-        existProduct.quantity += newProduct.quantity;
+        // eslint-disable-next-line no-plusplus
+        existItem.quantity++;
     }
+    setLocalStorage("cart", cart);
+    next();
+};
+export const increaseQuantityFromCart = () => {
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    next();
 };
-export const increaseQuantity = (id, next) => {
-    // eslint-disable-next-line no-plusplus
-    cart.find((item) => item.id === id).quantity++;
-    localStorage.setItem("cart", JSON.stringify(cart));
-    next();
+export const decreaseQuantityFromCart = () => {
+
 };
-export const decreaseQuantity = (id, next) => {
-    const currentProduct = cart.find((item) => item.id === id);
-    // eslint-disable-next-line no-plusplus
-    currentProduct.quantity--;
-    if (currentProduct.quantity < 1) {
-        const confirm = window.confirm("Bạn có muốn xóa không?");
-        if (confirm) {
-            cart = cart.filter((item) => item.id !== id);
-        }
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-    next();
+export const removeItemFromCart = () => {
+
 };
-export const removeItemInCart = (id, next) => {
-    const confirm = window.confirm("Bạn có muốn xóa không?");
-    if (confirm) {
-        cart = cart.filter((item) => item.id !== id);
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-    next();
+export const getTotalPrice = () => {
+
 };
